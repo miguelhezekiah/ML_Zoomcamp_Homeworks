@@ -9,11 +9,12 @@ df = pd.read_csv("./HW2/car_fuel_efficiency_2026.csv")
 print(df.describe())
 print(df.dtypes)
 print(df.tail(5))
+print(df.info())
 
 
 #Q1
 missing_values = df.columns[df.isnull().any()].tolist()
-print(missing_values)
+print("Question 1:",missing_values)
 
 #Q2
 hp_median = df['horsepower'].dropna().median()
@@ -33,3 +34,8 @@ df_val = df.iloc[idx[n_train:n_train+n_val]]
 df_test = df.iloc[idx[n_train+n_val:]]
 
 #Q3
+#for missing values
+
+
+print('Q4. With 0:   ', score_zero)
+print('Q4. With mean:', score_mean)
